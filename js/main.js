@@ -1,9 +1,6 @@
 /*
 *    main.js
 *    Mastering Data Visualization with D3.js
-*    Project 2 - Gapminder Clone
+*    Project 1 - Star Break Coffee
 */
 
-d3.json("data/data.json").then(function(data){
-	console.log(data);
-})
