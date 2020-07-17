@@ -25,8 +25,8 @@ var bisectDate = d3.bisector(function(d) { return d.date; }).left;
 // Add the line for the first time
 g.append("path")
     .attr("class", "line")
-    .attr("fill", "none")
-    .attr("stroke", "grey")
+    .attr("fill", "grey")
+    .attr("stroke", "red")
     .attr("stroke-width", "3px");
 
 // Labels
