@@ -35,7 +35,7 @@ var xLabel = g.append("text")
     .attr("y", height + 50)
     .attr("x", width / 2)
     .attr("font-size", "20px")
-    .attr("text-anchor", "middle")
+    .attr("text-anchor", "middle").style("fill","steelblue")
     .text("Time");
 var yLabel = g.append("text")
     .attr("class", "y axisLabel")
@@ -43,7 +43,7 @@ var yLabel = g.append("text")
     .attr("y", -60)
     .attr("x", -170)
     .attr("font-size", "20px")
-    .attr("text-anchor", "middle")
+    .attr("text-anchor", "middle").style("fill","steelblue")
     .text("Price (USD)")
 
 // Scales
