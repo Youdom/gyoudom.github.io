@@ -3,14 +3,17 @@
 
 */
 
+// Create a canvas
 var margin = { left:80, right:100, top:50, bottom:100 },
     height = 500 - margin.top - margin.bottom, 
     width = 800 - margin.left - margin.right;
 
+//append the svg object to the body of the page
 var svg = d3.select("#chart-area")
     .append("svg")
     .attr("width", width + margin.left + margin.right)
     .attr("height", height + margin.top + margin.bottom)
+
 var g = svg.append("g")
         .attr("transform", "translate(" + margin.left + 
             ", " + margin.top + ")");
@@ -24,8 +27,8 @@ var bisectDate = d3.bisector(function(d) { return d.date; }).left;
 // Add the line for the first time
 g.append("path")
     .attr("class", "line")
-    .attr("fill", "grey")
-    .attr("stroke", "steelblue")
+    .attr("fill", "red")
+    .attr("stroke", "red")
     .attr("stroke-width", "3px");
 
 // Labels
@@ -34,7 +37,7 @@ var xLabel = g.append("text")
     .attr("y", height + 50)
     .attr("x", width / 2)
     .attr("font-size", "20px")
-    .attr("text-anchor", "middle").style("fill","steelblue")
+    .attr("text-anchor", "middle").style("fill","red")
     .text("Time");
 var yLabel = g.append("text")
     .attr("class", "y axisLabel")
@@ -42,7 +45,7 @@ var yLabel = g.append("text")
     .attr("y", -60)
     .attr("x", -170)
     .attr("font-size", "20px")
-    .attr("text-anchor", "middle").style("fill","steelblue")
+    .attr("text-anchor", "middle").style("fill","red")
     .text("Price (USD)")
 
 // Scales
