@@ -13,13 +13,7 @@ var svg = d3.select("#chart-area")
     .append("svg")
     .attr("width", width + margin.left + margin.right)
     .attr("height", height + margin.top + margin.bottom)
-    svg.append("text")
-        .attr("x", (width / 2))             
-        .attr("y", 0 - (margin.top / 2))
-        .attr("text-anchor", "middle")  
-        .style("font-size", "16px") 
-        .style("text-decoration", "underline")  
-        .text("Evolution of Cryptocurrencies Over Time");
+
 var g = svg.append("g")
         .attr("transform", "translate(" + margin.left + 
             ", " + margin.top + ")");
@@ -58,6 +52,13 @@ var yLabel = g.append("text")
 var x = d3.scaleTime().range([0, width]);
 var y = d3.scaleLinear().range([height, 0]);
 
+    g.append("text")
+        .attr("x", (width / 2))             
+        .attr("y", 0 - (margin.top / 2))
+        .attr("text-anchor", "middle")  
+        .style("font-size", "16px") 
+        .style("text-decoration", "underline")  
+        .text("Evolution of Cryptocurrencies Over Time");
 // X-axis
 var xAxisCall = d3.axisBottom()
     .ticks(4);
