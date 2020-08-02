@@ -13,7 +13,13 @@ var svg = d3.select("#chart-area")
     .append("svg")
     .attr("width", width + margin.left + margin.right)
     .attr("height", height + margin.top + margin.bottom)
-
+    svg.append("text")
+        .attr("x", (width / 2))             
+        .attr("y", 0 - (margin.top / 2))
+        .attr("text-anchor", "middle")  
+        .style("font-size", "16px") 
+        .style("text-decoration", "underline")  
+        .text("Evolution of Cryptocurrencies Over Time");
 var g = svg.append("g")
         .attr("transform", "translate(" + margin.left + 
             ", " + margin.top + ")");
@@ -167,13 +173,7 @@ function update() {
         .on("mouseover", function() { focus.style("display", null); })
         .on("mouseout", function() { focus.style("display", "none"); })
         .on("mousemove", mousemove);
-    svg.append("text")
-        .attr("x", (width / 2))             
-        .attr("y", 0 - (margin.top / 2))
-        .attr("text-anchor", "middle")  
-        .style("font-size", "16px") 
-        .style("text-decoration", "underline")  
-        .text("Evolution of Cryptocurrencies Over Time");
+
         
     function mousemove() {
         var x0 = x.invert(d3.mouse(this)[0]),
