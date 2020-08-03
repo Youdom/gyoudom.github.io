@@ -46,8 +46,12 @@
   stroke-width: 2px;
   stroke-dasharray: 3,3;
 }
+.tooltip-date {
+  font-weight: bold;
+}
 
 #selections .col-md-4 {
   padding-top: 10px;
   padding-bottom: 10px;
 }
+

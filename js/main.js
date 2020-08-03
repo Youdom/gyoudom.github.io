@@ -167,6 +167,10 @@ function update() {
     focus.append("text")
         .attr("x", 15)
         .attr("dy", ".31em");
+    focus.append("text")
+        .attr("class", "tooltip-date")
+        .attr("x", 18)
+        .attr("y", -2);
     svg.append("rect")
         .attr("transform", "translate(" + margin.left + "," + margin.top + ")")
         .attr("class", "overlay")
@@ -187,6 +191,8 @@ function update() {
         focus.select("text").text(function() { return d3.format("$,")(d[yValue].toFixed(2)); });
         focus.select(".x-hover-line").attr("y2", height - y(d[yValue]));
         focus.select(".y-hover-line").attr("x2", -x(d.date));
+        focus.select(".tooltip-date").text(dateFormatter(d.date));
+        focus.select(".tooltip-coinType").text(formatValue($("#coin-select").val()));
     }
 
     // Path generator
